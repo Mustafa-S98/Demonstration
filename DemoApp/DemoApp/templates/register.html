@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
-    <title>Login</title>
+    <title>Registration form</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -51,7 +51,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 520px;
+    height: 850px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -139,9 +139,9 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="http://localhost:8000/loginData/", method="POST">
+    <form action="http://localhost:8000/register_data/", method="POST">
         {% csrf_token %}
-        <h3>Login Here</h3>
+        <h3>Register Here</h3>
 
         <label for="username">Username</label>
         <input type="text" placeholder="Username" name="username">
@@ -149,7 +149,22 @@ button{
         <label for="password">Password</label>
         <input type="password" placeholder="Password" name="password">
 
-        <input type="submit" value="Log In">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Name" name="name">
+
+        <label for="contact_no">Contact Number</label>
+        <input type="text" placeholder="Contact Number" name="contact_no">
+
+        <label for="gender">Name</label>
+        <select name="gender" placeholder="gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+
+        <label for="address">Address</label>
+        <input type="text" placeholder="Address" name="address">
+
+        <input type="submit" value="Register">
         <!-- <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>

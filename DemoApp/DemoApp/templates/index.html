@@ -537,6 +537,9 @@ footer p a:hover {
 </style>
 </head>
 <body class="landing-page ">
+    {% if alert %}
+      {{ alert }}
+    {% endif %}
     <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg "  color-on-scroll="100"  id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
@@ -555,9 +558,17 @@ footer p a:hover {
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                    <li>
-                      <a href="http://localhost:8000/login">Login</a>
+                    {% if not id %}
+                      {{ id }}
+                        <li class="nav-item">
+                          <a href="http://localhost:8000/login">Login</a>
+                        </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                      <a href="http://localhost:8000/register">Register</a>
                     </li>
+                    
                     <li class="dropdown nav-item">
                       <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                           <i class="material-icons">apps</i> Components
